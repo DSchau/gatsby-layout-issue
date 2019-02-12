@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'gatsby'
 import '../styles/base.module.scss'
 import SEO from '../components/seo'
-import Intro from '../components/Intro.js'
+import Intro from '../components/intro.js'
 
 class IndexPage extends Component {
   componentDidMount() {
