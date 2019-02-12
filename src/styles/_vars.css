@@ -1,0 +1,8 @@
+:root {
+  --mainColor: yellow;
+  --mainBlue: #5678fd;
+  --lightGrey: #939493;
+  --black: #40404c;
+
+  --midViewport: 400px;
+}

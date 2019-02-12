@@ -1,0 +1,117 @@
+@import './_vars.css';
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+}
+
+.logo {
+  height: 35px;
+  position: relative;
+  z-index: 6;
+  stroke: var(--black);
+  fill: var(--black);
+  transition: all 1s;
+  transition-delay: 250ms;
+  stroke-dashoffset: 0;
+}
+
+.logoIn {
+  @extend .logo;
+  fill: var(--mainBlue);
+  stroke: var(--mainBlue);
+  stroke-dasharray: 100;
+  animation: dash 5s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+.headerContainer {
+  padding: 0 30px;
+}
+
+.menuBars {
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  position: relative;
+  z-index: 6;
+  max-height: 13px;
+  top: 10px;
+  @media (min-width: 750px) {
+    width: 30px;
+  }
+}
+
+.menuBarsActive .menuBar1 {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menuBarsActive .menuBar2 {
+  transform: translateY(-3px) rotate(135deg);
+}
+
+.menuBar {
+  background: var(--black);
+  height: 2px;
+  transition: transform 0.3s;
+  @media (min-width: 750px) {
+    height: 2px;
+  }
+}
+
+.menuInner {
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  padding: 50px 10px;
+  position: fixed;
+  top: -120px;
+  left: 0;
+  right: 0;
+  background: #fafafa;
+  background: #fff;
+  z-index: 3;
+  transition: top 0.5s;
+  z-index: 5;
+  border-bottom: 4px solid var(--mainBlue);
+}
+
+.menuIn {
+  top: 0;
+  padding-top: 60px;
+}
+
+@media (min-width: 850px) {
+  header {
+    position: relative;
+  }
+  .logo {
+    height: 60px;
+    padding: 10px 0;
+  }
+
+  .menuBars {
+    position: relative;
+    top: 3px;
+    @media (min-width: 750px) {
+      top: 23px;
+    }
+  }
+}
